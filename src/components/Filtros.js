@@ -1,20 +1,33 @@
 import React, {useState, useEffect} from "react";
-import { fetchGenres, fetchPlatforms} from "../services/api";
+import { fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers} from "../services/api";
 
 const Filtros = ({onFilterChange}) => {
     const [genres, setGenres] = useState([]);
     const [platforms, setPlatforms] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [developers, setDevelopers] = useState([]);
+
     const [year, setYear] = useState("");
     const [selectedGenre, setSelecteGenre] = useState("");
     const [selectedPlatform, setSelectPlatform] = useState("");
+    const [selectedTag, setSelectTag] = useState("");
+    const [selectedDeveloper, setSelectedDeveloper] = useState("");
 
     useEffect(() => {
         fetchGenres().then((data) => setGenres(data.results));
         fetchPlatforms().then((data) => setPlatforms(data.results));
+        fetchTags().then((data) => setTags(data.results));
+        fetchDevelopers().then((data) => setDevelopers(data.results));
     }, []);
 
     const handleFilterChange = () => {
-        onFilterChange({ year, genre: selectedGenre, platform: selectedPlatform });
+        onFilterChange({ 
+            year, 
+            genre: selectedGenre, 
+            platform: selectedPlatform, 
+            tag: selectedTag,
+            developer: selectedDeveloper,
+        });
     };
 
     return (
@@ -36,7 +49,21 @@ const Filtros = ({onFilterChange}) => {
             <select value={selectedPlatform} onChange={(e) => setSelectPlatform(e.target.value)} className="p-2 border rounded-lg">
                 <option value="">Seleccionar Plataforma</option>
                 {platforms.map((platform) => (
-                    <option key={platform.id} value={platform.slug}>{platform.name}</option>
+                    <option key={platform.id} value={platform.id}>{platform.name}</option>
+                ))}
+            </select>
+
+            <select value={selectedTag} onChange={(e) => setSelectTag(e.target.value)} className="p-2 border rounded-lg">
+                <option value="">Seleccionar Tag</option>
+                {tags.map((tag) => (
+                    <option key={tag.id} value={tag.slug}>{tag.name}</option>
+                ))}
+            </select>
+
+            <select value={selectedDeveloper} onChange={(e) => setSelectedDeveloper(e.target.value)} className="p-2 border rounded-lg">
+                <option value="">Seleccionar Empresa</option>
+                {developers.map((developer) => (
+                    <option key={developer.id} value={developer.slug}>{developer.name}</option>
                 ))}
             </select>
 

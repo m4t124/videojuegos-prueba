@@ -9,7 +9,9 @@ export const fetchGames = async (filters = {}) => {
         ...(filters.year && { dates: `${filters.year}-01-01,${filters.year}-12-31` }),
         ...(filters.genre && { genres: filters.genre }),
         ...(filters.platform && { platforms: filters.platform }),
-        ...(filters.search && { search: filters.search }),
+        ...(filters.tag && { tags: filters.tag }),
+        ...(filters.developer && { developers: filters.developer }),
+        ...(filters.search && { search: filters.search, search_exact: true }),
     });
 
     const response = await fetch(`${BASE_URL}/games?${params}`);
@@ -37,6 +39,16 @@ export const fetchPlatforms = async () => {
     return response.json();
 };
 
-const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms };
+export const fetchTags = async () => {
+    const response = await fetch(`${BASE_URL}/tags?key=${API_KEY}`);
+    return response.json();
+};
+
+export const fetchDevelopers = async () => {
+    const response = await fetch(`${BASE_URL}/developers?key=${API_KEY}`);
+    return response.json();
+};
+
+const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers };
 
 export default api;
