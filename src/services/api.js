@@ -1,7 +1,6 @@
 const API_KEY = process.env.REACT_APP_RAWG_API_KEY;
 const BASE_URL = "https://api.rawg.io/api";
 
-
 export const fetchGames = async (filters = {}) => {
     const params = new URLSearchParams({
         key: API_KEY,
@@ -49,6 +48,6 @@ export const fetchDevelopers = async () => {
     return response.json();
 };
 
-const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers };
+const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers}
 
 export default api;
