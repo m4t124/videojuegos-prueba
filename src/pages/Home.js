@@ -3,6 +3,7 @@ import { fetchGames } from "../services/api";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import Filtros from "../components/Filtros";
+import '../styles/Home.css'
 
 const Home = () => {
   const [games, setGames] = useState([]);
