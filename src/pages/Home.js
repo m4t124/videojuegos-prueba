@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchGames } from "../services/api";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
-import Filtros from "./Filtros";
+import Filtros from "../components/Filtros";
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -10,15 +10,15 @@ const Home = () => {
   const [filters, setFilters] = useState({});
 
   useEffect(() => {
+    const fetchFilteredGames = async () => {
+      setLoading(true);
+      const data = await fetchGames(filters);
+      setGames(data.results);
+      setLoading(false);
+    };
+    
     fetchFilteredGames();
   }, [filters]);
-
-  const fetchFilteredGames = async () => {
-    setLoading(true);
-    const data = await fetchGames(filters);
-    setGames(data.results);
-    setLoading(false);
-  };
 
   return (
     <div className="container mx-auto p-4">
