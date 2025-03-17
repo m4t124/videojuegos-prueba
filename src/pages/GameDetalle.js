@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchGameDetalle, fetchGameDLCs, fetchGameLogros, fetchGameImagenes, fetchGameTrailer } from "../services/api";
-import '../styles/GameDetalle.css';
+import '../styles/GameDetalle.css'; // Estilos de GameDetalle
 
 const GameDetalle = () => {
-    const { id } = useParams();
-    const [game, setGame] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [trailer, setTrailer] = useState(null);
-    const [dlcs, setDlcs] = useState([]);
-    const [achievements, setAchievements] = useState([]);
-    const [screenshots, setScreenshots] = useState([]);
+    const { id } = useParams(); // Obtiene el ID del videojuego desde los parámetros de la URL
+    const [game, setGame] = useState(null); // Estado para almacenar los detalles
+    const [loading, setLoading] = useState(true); // Estado para controlar si los datos están cargados
+    const [trailer, setTrailer] = useState(null); // Estado para almacenar la URL del tráiler
+    const [dlcs, setDlcs] = useState([]); // Estado para almacenar los DLCs
+    const [achievements, setAchievements] = useState([]); // Estado para almacenar los logros
+    const [screenshots, setScreenshots] = useState([]); // Estado para almacenar las imagenes
 
+    // Se usa useEffect para ejecutar la función de obtener datos cuamdo cambia el 'id' del videojuego
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const gameData = await fetchGameDetalle(id);
+                // Aqui se llama a la API para obtener los detalles del videjuego
+                const gameData = await fetchGameDetalle(id); // Obtiene los detalles principales del videojuego
                 setGame(gameData);
 
-                const dlcData = await fetchGameDLCs(id);
+                const dlcData = await fetchGameDLCs(id); // Obtiene los DLCs del videjuego
                 setDlcs(dlcData);
 
-                const achievementsData = await fetchGameLogros(id);
+                const achievementsData = await fetchGameLogros(id); // Obtiene los logros del videjuego
                 setAchievements(achievementsData);
     
-                const trailerUrl = await fetchGameTrailer(id);
+                const trailerUrl = await fetchGameTrailer(id); // Obtiene la URL del tráiler
                 setTrailer(trailerUrl);
 
-                const screenshotsData = await fetchGameImagenes(id);
+                const screenshotsData = await fetchGameImagenes(id); // Obtiene las imágenes del videojuego
                 setScreenshots(screenshotsData);
     
                 setLoading(false);
@@ -37,21 +39,20 @@ const GameDetalle = () => {
             }
         };
     
-        fetchData();
+        fetchData(); // Llama a la función para obtener los datos del videojuego
     }, [id]);
     
-
     if (loading) return <p className="loading">Cargando detalles del videojuego...</p>;
 
     return (
         <div className="game-container">
-            <h1 className="game-detail-title">{game.name}</h1>
+            <h1 className="game-detail-title">{game.name}</h1> {/* Nombre del videojuego */}
 
             <div className="image-container">
-                <img src={game.background_image} alt={game.name} className="game-image" />
+                <img src={game.background_image} alt={game.name} className="game-image" /> {/* Portada del videojuego */}
             </div>
 
-            <p className="game-description">{game.description_raw}</p>
+            <p className="game-description">{game.description_raw}</p> {/* Descripción del videojuego */}
 
             <div className="game-details">
                 <p><strong>Metacritic:</strong> {game.metacritic || "N/A"}</p>
@@ -63,6 +64,7 @@ const GameDetalle = () => {
 
             </div>
 
+            {/* Se visualiza el tráiler si es que está disponible */}
             {trailer ? (
                 <div className="trailer-container">
                     <h2 className="trailer-title">Tráiler</h2>
@@ -72,9 +74,10 @@ const GameDetalle = () => {
                     </video>
                 </div>
             ) : (
-                <p>No hay tráiler disponible.</p>
+                <p>No hay tráiler disponible.</p> // Si no hay tráiler, se muestra este mensaje
             )}
 
+            {/* Imagenes del videojuego */}
             {screenshots.length > 0 && (
                 <div className="screenshots-container">
                     <h2 className="screenshots-title">Imágenes</h2>
@@ -91,6 +94,7 @@ const GameDetalle = () => {
                 </div>
             )}
 
+            {/* Logros del videojuego */}
             {achievements.length > 0 && (
                 <div className="game-achievements">
                     <h2 className="achievements-title">Logros y Trofeos</h2>
@@ -107,6 +111,7 @@ const GameDetalle = () => {
                 </div>
             )}
 
+            {/* DLCs disponibles */}
             {dlcs.length > 0 && (
                 <div className="game-dlcs">
                     <h2>DLCs y Expansiones</h2>

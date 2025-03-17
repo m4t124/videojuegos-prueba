@@ -1,24 +1,28 @@
+/* Estilo para las tarjetas de los videojuegos */
 .game-card {
     background: #2a2a3d;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out; /* Transición suave para el efecto hover */
 }
 
+/* Efecto al pasar el mouse sobre la tarjeta */
 .game-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta cuando se pasa el mouse por encima */
 }
 
+/* Estilo para las imágenes de los videojuegos */
 .game-image {
     width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Cubre el área sin distorsionar la imagen */
 }
 
+/* Estilo para el título del videojuego */
 .game-title {
     font-size: 18px;
     font-weight: bold;
@@ -26,14 +30,16 @@
     margin-top: 10px;
 }
 
+/* Estilo para el texto de Metacritic */
 .game-meta {
     font-size: 14px;
     color: #bbb;
 }
 
+/* Estilo para el contenedor de las tarjetas */
 .games-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Coloca las tarjetas en columnas adaptables */
     gap: 20px;
     padding: 20px;
 }

@@ -1,3 +1,4 @@
+/* Contenedor principal de los detalles del videojuego */
 .game-container {
     max-width: 900px;
     margin: 0 auto;
@@ -5,12 +6,14 @@
     text-align: center;
 }
 
+/* Título de los detalles del videojuego */
 .game-detail-title {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
 }
 
+/* Imagen del videojuego */
 .game-image {
     width: 80%;
     max-height: 500px;
@@ -19,6 +22,7 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Descripción del videojuego */
 .game-description {
     font-size: 1.2rem;
     text-align: justify;
@@ -26,6 +30,7 @@
     color: #ffffff;
 }
 
+/* Detalles adicionales */
 .game-details {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -35,49 +40,48 @@
     color: #fff;
 }
 
+/* Contenedor para el tráiler */
 .trailer-container {
     margin-top: 20px;
 }
 
+/* Título del tráiler */
 .trailer-title {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
+/* Video del tráiler */
 .trailer-video {
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para el texto de carga */
 .loading {
     text-align: center;
     font-size: 1.5rem;
     margin-top: 50px;
 }
 
-.game-dlcs ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.game-dlcs li {
-    margin-bottom: 5px;
-}
-
+/* Estilo para los logros y trofeos */
 .game-achievements {
     margin-top: 20px;
 }
 
+/* Título de logros y trofeos */
 .achievements-title {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
+/* Lista de logros */
 .achievements-list {
     list-style: none;
     padding: 0;
 }
 
+/* Estilo de los logros */
 .achievement-item {
     display: flex;
     align-items: center;
@@ -91,14 +95,16 @@
     font-weight: bold;
 }
 
+/* Estilo para el nombre y descripción de los logros */
 .achievement-item strong {
-    color: #ffffff;
+    color: #ffffff; /* Color blanco para los nombres */
 }
 
 .achievement-item div {
-    color: #ffffff;
+    color: #ffffff; /* Color blanco para las descripciones */
 }
 
+/* Icono de los logros */
 .achievement-image {
     width: 50px;
     height: 50px;
@@ -106,6 +112,7 @@
     border-radius: 5px;
 }
 
+/* Contenedor de las imagenes del videojuego */
 .screenshots-container {
     display: flex;
     flex-wrap: wrap;
@@ -115,6 +122,7 @@
     margin: 0 auto;
 }
 
+/* Grid de las imagenes */
 .screenshots-grid {
     display: flex;
     flex-wrap: wrap;
@@ -123,15 +131,17 @@
     width: 100%;
 }
 
+/* Estilo de las imágenes */
 .screenshots-image {
     max-width: 400px; 
     width: 100%; 
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Mantiene la imagen dentro del área */
     border-radius: 8px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
+ /* Estilos para los DLCs */
 .dlcs-container {
     display: flex;
     flex-wrap: wrap;
@@ -140,20 +150,24 @@
     align-items: flex-start;
 }
 
+/* Estilo de cada DLCs */
 .dlc-item {
     width: 200px;
     text-align: center;
 }
 
+/* Enlace para el DLC */
 .dlc-item-link {
-    text-decoration: none;
+    text-decoration: none; /* Elimina el subrayado */
     color: inherit;
 }
 
+/* Efecto hover en los enlaces de DLC */
 .dlc-item-link:hover {
-    opacity: 0.8;
+    opacity: 0.8; /* Opacidad reducidad */
 }
 
+/* Estilo de las imágenes de los DLCs */
 .dlc-image {
     width: 200px;
     height: 120px;
