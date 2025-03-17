@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchGameDetalle, fetchGameDLCs, fetchGameLogros, fetchGameImagenes, fetchGameTrailer } from "../services/api";
-//import { fetchYoutubeTrailer } from "../services/YoutubeApi";
 import '../styles/GameDetalle.css';
 
 const GameDetalle = () => {
