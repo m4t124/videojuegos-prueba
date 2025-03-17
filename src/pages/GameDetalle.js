@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchGameDetalle, fetchGameDLCs, fetchGameLogros, fetchGameImagenes, fetchGameTrailer } from "../services/api";
 import '../styles/GameDetalle.css';
 
@@ -19,6 +19,7 @@ const GameDetalle = () => {
                 setGame(gameData);
 
                 const dlcData = await fetchGameDLCs(id);
+                console.log(dlcData);
                 setDlcs(dlcData);
 
                 const achievementsData = await fetchGameLogros(id);
@@ -110,13 +111,20 @@ const GameDetalle = () => {
             {dlcs.length > 0 && (
                 <div className="game-dlcs">
                     <h2>DLCs y Expansiones</h2>
-                    <ul>
+                    <div className="dlcs-container">
                         {dlcs.map((dlc) => (
-                            <li key={dlc.id}>
-                                <strong>{dlc.name}</strong> - {dlc.released || "Fecha desconocida"}
-                            </li>
+                            <Link key={dlc.id} to={`/game/${dlc.id}`} className="dlc-item-link">
+                            <div className="dlc-item">
+                                {dlc.background_image && (
+                                    <img src={dlc.background_image} alt={dlc.name} className="dlc-image" />
+                                )}
+                                <div>
+                                    <strong>{dlc.name}</strong> - {dlc.released || "Fecha desconocida"}
+                                </div>
+                            </div>
+                        </Link>
                         ))}
-                    </ul>
+                    </div>
                 </div>
             )}
 

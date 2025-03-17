@@ -52,12 +52,25 @@ export const fetchGameDLCs = async (id) => {
     try {
         const response = await fetch(`${BASE_URL}/games/${id}/additions?key=${API_KEY}`);
         const data = await response.json();
-        return data.results;
+        
+        // Hacer llamadas individuales para obtener imágenes
+        const dlcsWithImages = await Promise.all(data.results.map(async (dlc) => {
+            const dlcDetailsResponse = await fetch(`${BASE_URL}/games/${dlc.slug}?key=${API_KEY}`);
+            const dlcDetails = await dlcDetailsResponse.json();
+
+            return { 
+                ...dlc, 
+                background_image: dlcDetails.background_image || null
+            };
+        }));
+
+        return dlcsWithImages;
     } catch (error) {
         console.error("Error al obtener los DLCs:", error);
-        return[];
+        return [];
     }
 };
+
 
 export const fetchGameLogros = async (id) => {
     try {
