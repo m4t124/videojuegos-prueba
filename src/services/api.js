@@ -48,6 +48,44 @@ export const fetchDevelopers = async () => {
     return response.json();
 };
 
-const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers}
+export const fetchGameDLCs = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/games/${id}/additions?key=${API_KEY}`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error("Error al obtener los DLCs:", error);
+        return[];
+    }
+};
+
+export const fetchGameLogros = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/games/${id}/achievements?key=${API_KEY}`);
+        const data = await response.json();
+
+        if (data.results.length > 0) {
+            return data.results;
+        } else {
+            return [];
+        }
+    } catch (error) {
+        console.error("Error al obtener los logros:", error);
+        return [];
+    }
+};
+
+export const fetchGameImagenes = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/games/${id}/screenshots?key=${API_KEY}`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error("Error al obtener las imágenes del videojuego:", error);
+        return [];
+    }
+};
+
+const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers, fetchGameDLCs, fetchGameLogros, fetchGameImagenes}
 
 export default api;

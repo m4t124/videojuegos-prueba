@@ -52,3 +52,69 @@
     font-size: 1.5rem;
     margin-top: 50px;
 }
+
+.game-dlcs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-dlcs li {
+    margin-bottom: 5px;
+}
+
+.game-achievements {
+    margin-top: 20px;
+}
+
+.achievements-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.screenshots-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 90%; /* Se adapta mejor */
+    margin: 0 auto;
+}
+
+.screenshots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.screenshots-image {
+    max-width: 300px; /* Controla el tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Evita recortes */
+    border-radius: 8px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
