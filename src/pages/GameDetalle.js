@@ -19,7 +19,6 @@ const GameDetalle = () => {
                 setGame(gameData);
 
                 const dlcData = await fetchGameDLCs(id);
-                console.log(dlcData);
                 setDlcs(dlcData);
 
                 const achievementsData = await fetchGameLogros(id);

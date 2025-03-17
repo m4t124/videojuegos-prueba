@@ -53,7 +53,6 @@ export const fetchGameDLCs = async (id) => {
         const response = await fetch(`${BASE_URL}/games/${id}/additions?key=${API_KEY}`);
         const data = await response.json();
         
-        // Hacer llamadas individuales para obtener imágenes
         const dlcsWithImages = await Promise.all(data.results.map(async (dlc) => {
             const dlcDetailsResponse = await fetch(`${BASE_URL}/games/${dlc.slug}?key=${API_KEY}`);
             const dlcDetails = await dlcDetailsResponse.json();
