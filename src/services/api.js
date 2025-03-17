@@ -86,6 +86,26 @@ export const fetchGameImagenes = async (id) => {
     }
 };
 
-const api = { fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, fetchTags, fetchDevelopers, fetchGameDLCs, fetchGameLogros, fetchGameImagenes}
+export const fetchGameTrailer = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/games/${id}/movies?key=${API_KEY}`);
+        const data = await response.json();
+
+        if (data.results.length > 0) {
+            return data.results[0].data.max; 
+        } else {
+            return null;
+        }
+    } catch (error) {
+        console.error("Error al obtener el tráiler:", error);
+        return null;
+    }
+};
+
+const api = { 
+    fetchGames, fetchGameDetalle, fetchGenres, fetchPlatforms, 
+    fetchTags, fetchDevelopers, fetchGameDLCs, fetchGameLogros, 
+    fetchGameImagenes, fetchGameTrailer
+};
 
 export default api;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchGameDetalle, fetchGameDLCs, fetchGameLogros, fetchGameImagenes } from "../services/api";
-import { fetchYoutubeTrailer } from "../services/YoutubeApi";
+import { fetchGameDetalle, fetchGameDLCs, fetchGameLogros, fetchGameImagenes, fetchGameTrailer } from "../services/api";
+//import { fetchYoutubeTrailer } from "../services/YoutubeApi";
 import '../styles/GameDetalle.css';
 
 const GameDetalle = () => {
@@ -25,7 +25,7 @@ const GameDetalle = () => {
                 const achievementsData = await fetchGameLogros(id);
                 setAchievements(achievementsData);
     
-                const trailerUrl = await fetchYoutubeTrailer(gameData.name);
+                const trailerUrl = await fetchGameTrailer(id);
                 setTrailer(trailerUrl);
 
                 const screenshotsData = await fetchGameImagenes(id);
@@ -64,20 +64,16 @@ const GameDetalle = () => {
 
             </div>
 
-            {trailer && (
+            {trailer ? (
                 <div className="trailer-container">
                     <h2 className="trailer-title">Tráiler</h2>
-                    <iframe
-                        width="800"
-                        height="450"
-                        src={trailer}
-                        title="Youtube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="trailer-video"
-                    />
+                    <video width="800" height="450" controls>
+                        <source src={trailer} typs="video/mp4" />
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
                 </div>
+            ) : (
+                <p>No hay tráiler disponible.</p>
             )}
 
             {screenshots.length > 0 && (
