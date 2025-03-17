@@ -85,7 +85,7 @@ const GameDetalle = () => {
                                 key={screenshot.id} 
                                 src={screenshot.image} 
                                 alt="Imagenes" 
-                                className="screenshot-image" 
+                                className="screenshots-image" 
                             />
                         ))}
                     </div>

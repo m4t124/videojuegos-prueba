@@ -99,7 +99,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    max-width: 90%; /* Se adapta mejor */
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -112,9 +112,13 @@
 }
 
 .screenshots-image {
-    max-width: 300px; /* Controla el tamaño máximo */
-    height: auto; /* Mantiene la proporción */
-    object-fit: contain; /* Evita recortes */
+    max-width: 400px; 
+    width: 100%; 
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+
