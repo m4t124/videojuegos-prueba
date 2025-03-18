@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Videojuegos UGPS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta es una aplicación web que permite explorar y buscar videojuegos utilizando la API de RAWG. Los usuarios pueden ver
+una lista de videojuegos, filtrados por género, plataforma, año, etc. Además, pueden acceder a detalles específicos de
+cada videojuegos, como imágenes, traílers, logros y DLCs.
 
-## Available Scripts
+# Características
 
-In the project directory, you can run:
+-Lista de videojuegos: Muestra una lista de videojuegos ordenados por puntuación de mayor a menor basado en Metacritic.
+-Filtros avanzados: Permite filtrar videojuegos por género, plataforma, año, desarrolador y tags.
+-Búsqueda: Permite buscar videojuegos por su nombre.
+-Detalles del videojuego: Muestra información detallada de cada juego, incluyendo:
+    -Imágenes.
+    -Tráiler.
+    -Logros.
+    -DLCs.
+
+Cabe mencionar que la API RAWG solo muestra el trailer del videojuego "Grand Theft Auto V" y "Rise of the Tomb Raider", los
+cuales funcionan correctamente.
+
+## Tecnologías utilizadas
+
+-React: Biblioteca de JavaScript para construir la interfaz de usuario.
+-React Router: Para manejar la navegación entre páginas.
+-RAWG API: API utilizada para obtener datos sobre videojuegos.
+-Tailwind CSS: Para estilizar la aplicación. Elegi esta tecnología ya que permite crear
+interfaces modernas y responsivas de manera rápida y eficiente.
+
+## Instalacióm
+
+Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
+
+1. Clona el reposito:
+
+### `git clone https://github.com/tu-usuario/tu-repositorio.git`
+
+2. Navega al directorio del proyecto:
+
+### `cd tu-repositorio`
+
+3. Instala las dependecias:
+
+### `npm install`
+
+4. Crea un archivo .env en la raíz del proyecto y agrega tu clave de API RAWG:
+
+Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API KEY [API RAWG](https://rawg.io/apidocs)
+
+### `REACT_APP_RAWG_API_KEY=tu_clave_api_aqui`
+
+5. Inicia la aplicación:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. Abre tu navegador y visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estructura del proyecto
 
-### `npm test`
+src/
+├── components/           
+│   ├── Filtros.js        # Componente de filtros
+│   ├── GameCard.js       # Tarjeta para mostrar detalles de un videojuego
+│   └── SearchBar.js      # Barra de búsqueda
+├── pages/                
+│   ├── GameDetalle.js    # Página de detalles de un videojuego
+│   └── Home.js           # Página principal con la lista de videojuegos
+│── services/
+│   └── api.js            # Funciones para obtener datos de la API
+├── styles/               
+│   ├── GameCard.css      # Estilos para las tarjetas de videojuegos
+│   ├── GameDetalle.css   # Estilos para la página GameDetalle
+│   └── Home.css          # Estilos para la página Home 
+├── App.js                # Configuración de rutas y componente principal
+└── index.js              # Punto de entrada de la aplicación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notas
 
-### `npm run build`
+-Sobre el tema de los tráilers quise ocupar la API de Youtube para poder visualizarlos, me funciono pero
+tuve problemas al dia siguiente ya que Google me bloqueba la API, asi que volvi a la tradicional.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-El videojuego "Soulcalibur (1998)" no contaba con imagen al iniciar el codigo, asi que añadi
+manualmente la foto del videojuego en [GameCard.js]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Autor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Matías Nicolas Morales Vergara
