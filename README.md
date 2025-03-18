@@ -62,7 +62,7 @@ Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API K
 
 # Estructura del proyecto
 
-.
+`.
 ├── ./src/
 ├── ./├── components/
 ├── ./│ ├── Filtros.js # Componente de filtros
@@ -78,7 +78,7 @@ Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API K
 ├── ./│ ├── GameDetalle.css # Estilos para la página GameDetalle
 ├── ./│ └── Home.css # Estilos para la página Home
 ├── ./├── App.js # Configuración de rutas y componente principal
-└── ./└── index.js # Punto de entrada de la aplicación
+└── ./└── index.js # Punto de entrada de la aplicación`
 
 ## Notas
 
