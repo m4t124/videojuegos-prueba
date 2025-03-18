@@ -62,22 +62,22 @@ Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API K
 
 # Estructura del proyecto
 
-src/ <br>
+`src/ <br>
 ├── components/ <br>
 │ ├── Filtros.js # Componente de filtros <br>
-│ ├── GameCard.js # Tarjeta para mostrar detalles de un videojuego
-│ └── SearchBar.js # Barra de búsqueda
-├── pages/
-│ ├── GameDetalle.js # Página de detalles de un videojuego
-│ └── Home.js # Página principal con la lista de videojuegos
-├── services/
-│ └── api.js # Funciones para obtener datos de la API
-├── styles/
-│ ├── GameCard.css # Estilos para las tarjetas de videojuegos
-│ ├── GameDetalle.css # Estilos para la página GameDetalle
-│ └── Home.css # Estilos para la página Home
-├── App.js # Configuración de rutas y componente principal
-└── index.js # Punto de entrada de la aplicación
+│ ├── GameCard.js # Tarjeta para mostrar detalles de un videojuego <br>
+│ └── SearchBar.js # Barra de búsqueda <br>
+├── pages/ <br>
+│ ├── GameDetalle.js # Página de detalles de un videojuego <br>
+│ └── Home.js # Página principal con la lista de videojuegos <br>
+├── services/ <br>
+│ └── api.js # Funciones para obtener datos de la API <br>
+├── styles/ <br>
+│ ├── GameCard.css # Estilos para las tarjetas de videojuegos <br>
+│ ├── GameDetalle.css # Estilos para la página GameDetalle <br>
+│ └── Home.css # Estilos para la página Home <br>
+├── App.js # Configuración de rutas y componente principal <br>
+└── index.js # Punto de entrada de la aplicación` <br>
 
 ## Notas
 
