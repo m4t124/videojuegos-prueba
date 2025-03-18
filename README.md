@@ -4,11 +4,14 @@ Esta es una aplicación web que permite explorar y buscar videojuegos utilizando
 una lista de videojuegos, filtrados por género, plataforma, año, etc. Además, pueden acceder a detalles específicos de
 cada videojuegos, como imágenes, traílers, logros y DLCs.
 
-# Características
+## Características
 
 -Lista de videojuegos: Muestra una lista de videojuegos ordenados por puntuación de mayor a menor basado en Metacritic.
+
 -Filtros avanzados: Permite filtrar videojuegos por género, plataforma, año, desarrolador y tags.
+
 -Búsqueda: Permite buscar videojuegos por su nombre.
+
 -Detalles del videojuego: Muestra información detallada de cada juego, incluyendo:
     -Imágenes.
     -Tráiler.
@@ -21,12 +24,15 @@ cuales funcionan correctamente.
 ## Tecnologías utilizadas
 
 -React: Biblioteca de JavaScript para construir la interfaz de usuario.
+
 -React Router: Para manejar la navegación entre páginas.
+
 -RAWG API: API utilizada para obtener datos sobre videojuegos.
+
 -Tailwind CSS: Para estilizar la aplicación. Elegi esta tecnología ya que permite crear
 interfaces modernas y responsivas de manera rápida y eficiente.
 
-## Instalacióm
+## Instalación
 
 Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
 
@@ -79,7 +85,7 @@ src/
 tuve problemas al dia siguiente ya que Google me bloqueba la API, asi que volvi a la tradicional.
 
 -El videojuego "Soulcalibur (1998)" no contaba con imagen al iniciar el codigo, asi que añadi
-manualmente la foto del videojuego en [GameCard.js]
+manualmente la foto del videojuego en GameCard.js
 
 # Autor
 
