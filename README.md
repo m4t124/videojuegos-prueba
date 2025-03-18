@@ -25,7 +25,8 @@ cuales funcionan correctamente.
 
 -React: Biblioteca de JavaScript para construir la interfaz de usuario.
 
--React Router: Para manejar la navegación entre páginas.
+-React Router: Para manejar la navegación entre páginas. Esto permite navegar a traves de la aplicación, por ejemplo, al
+ver los detalles de un videojuego, se puede seleccionar un DLC y se redigira a los detalles del DLC.
 
 -RAWG API: API utilizada para obtener datos sobre videojuegos.
 
