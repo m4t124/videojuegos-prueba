@@ -64,20 +64,20 @@ Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API K
 
 src/ <br>
 ├── components/ <br>
-│ ├── Filtros.js # Componente de filtros <br>
-│ ├── GameCard.js # Tarjeta para mostrar detalles de un videojuego <br>
-│ └── SearchBar.js # Barra de búsqueda <br>
+│ ├── Filtros.js <br>
+│ ├── GameCard.js  <br>
+│ └── SearchBar.js  <br>
 ├── pages/ <br>
-│ ├── GameDetalle.js # Página de detalles de un videojuego <br>
-│ └── Home.js # Página principal con la lista de videojuegos <br>
+│ ├── GameDetalle.js  <br>
+│ └── Home.js  <br>
 ├── services/ <br>
-│ └── api.js # Funciones para obtener datos de la API <br>
+│ └── api.js  <br>
 ├── styles/ <br>
-│ ├── GameCard.css # Estilos para las tarjetas de videojuegos <br>
-│ ├── GameDetalle.css # Estilos para la página GameDetalle <br>
-│ └── Home.css # Estilos para la página Home <br>
-├── App.js # Configuración de rutas y componente principal <br>
-└── index.js # Punto de entrada de la aplicación <br>
+│ ├── GameCard.css  <br>
+│ ├── GameDetalle.css  <br>
+│ └── Home.css  <br>
+├── App.js  <br>
+└── index.js  <br>
 
 ## Notas
 
