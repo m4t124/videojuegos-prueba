@@ -62,9 +62,9 @@ Para utilizar la API, tienes que crearte una cuenta en RAWG y solicitar la API K
 
 # Estructura del proyecto
 
-src/
-├── components/
-│ ├── Filtros.js # Componente de filtros
+src/ <br>
+├── components/ <br>
+│ ├── Filtros.js # Componente de filtros <br>
 │ ├── GameCard.js # Tarjeta para mostrar detalles de un videojuego
 │ └── SearchBar.js # Barra de búsqueda
 ├── pages/
